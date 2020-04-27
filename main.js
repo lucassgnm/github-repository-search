@@ -3,6 +3,7 @@ var ulElement = document.querySelector('#app ul');
 var buttonElement = document.querySelector('#app button');
 
 function sendUser() {
+    ulElement.innerHTML = '';
     var user = inputElement.value;
     getGitRepository(user);
 }
@@ -24,4 +25,5 @@ function getGitRepository(inputUser) {
     .catch(function(error) {
         console.warn(error);
     });
+    inputElement.value = '';
 }
